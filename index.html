@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abhay Singh | AI Security Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+body{font-family:'Poppins',sans-serif;background:#000814;color:white;overflow-x:hidden;perspective:2000px;}
+canvas{position:fixed;top:0;left:0;z-index:-10;}
+
+nav{position:fixed;width:100%;top:0;background:rgba(0,0,30,0.6);backdrop-filter:blur(10px);padding:15px;text-align:center;z-index:1000;border-bottom:1px solid rgba(0,255,255,0.2);} 
+nav a{color:#00ffff;margin:0 15px;text-decoration:none;font-weight:600;}
+nav a:hover{color:#ff00cc;text-shadow:0 0 10px #ff00cc;}
+
+.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;}
+.hero h1{font-family:'Orbitron';font-size:70px;background:linear-gradient(90deg,#00ffff,#ff00cc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.typing{margin-top:15px;font-size:22px;color:#cbd5e1;height:30px;}
+
+.profile-img{width:200px;height:200px;border-radius:50%;border:3px solid #00ffff;box-shadow:0 0 80px #00ffff;margin-bottom:20px;animation:pulse 3s infinite alternate;}
+@keyframes pulse{from{box-shadow:0 0 40px #00ffff;}to{box-shadow:0 0 120px #ff00cc;}}
+
+.btn{margin:10px;padding:12px 30px;border-radius:40px;background:linear-gradient(90deg,#00ffff,#ff00cc);color:black;text-decoration:none;font-weight:600;}
+.btn:hover{transform:scale(1.1);box-shadow:0 15px 40px rgba(255,0,200,0.6);} 
+
+section{padding:120px 8%;}
+.section-title{text-align:center;font-size:42px;margin-bottom:60px;color:#00ffff;font-family:'Orbitron';text-shadow:0 0 20px #00ffff;}
+
+.card{background:rgba(15,23,42,0.85);padding:30px;border-radius:20px;margin-bottom:30px;border:1px solid rgba(0,255,255,0.3);transition:0.4s;}
+.card:hover{transform:scale(1.05);box-shadow:0 0 60px rgba(255,0,200,0.6);} 
+
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+.skill{background:#0f172a;padding:15px;border-radius:15px;border:1px solid #00ffff;text-align:center;font-size:14px;transition:0.3s;}
+.skill:hover{transform:translateY(-8px);box-shadow:0 0 25px #ff00cc;}
+
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;}
+
+footer{text-align:center;padding:40px;background:#020617;color:#94a3b8;border-top:1px solid rgba(0,255,255,0.2);} 
+
+@media(max-width:768px){.hero h1{font-size:40px;}}
+</style>
+</head>
+<body>
+
+<nav>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#skills">Skills</a>
+<a href="#certifications">Certifications</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="hero">
+<img src="jjh.png" class="profile-img" alt="Abhay Singh">
+<h1>Abhay Singh</h1>
+<div class="typing" id="typing"></div>
+<a href="/mnt/data/Blue and Black Modern Resume.pdf" class="btn" download>Download Resume</a>
+<a href="https://huggingface.co/Aby101" target="_blank" class="btn">HuggingFace</a>
+</div>
+
+<section id="about">
+<h2 class="section-title">About Me</h2>
+<div class="card">
+<p>B.Tech Computer Science graduate with 4+ years experience in AI/ML, Data Science & Full Stack Development. Creator of FORTIK – AI-powered Deepfake, Voice Clone & Fake News Detection System.</p>
+</div>
+</section>
+
+<section id="projects">
+<h2 class="section-title">All Projects</h2>
+<div class="projects-grid">
+<div class="card"><h3>FORTIK</h3><p>AI Deepfake & Fake Content Detection System.</p></div>
+<div class="card"><h3>Insurance Claim Fraud Detection</h3><p>YOLOv8/YOLOv9 based CV system.</p></div>
+<div class="card"><h3>Chatbot App</h3><p>FastAPI + RASA + WebRTC integration.</p></div>
+<div class="card"><h3>E-Commerce Platform</h3><p>Django + MySQL + PayPal integration.</p></div>
+<div class="card"><h3>IPL Match Prediction</h3><p>Flask ML Web App using Kaggle dataset.</p></div>
+<div class="card"><h3>Email Spam Detection</h3><p>NLP using NLTK & SpaCy.</p></div>
+<div class="card"><h3>Face Recognition</h3><p>OpenCV + TensorFlow system.</p></div>
+<div class="card"><h3>Blockchain Election</h3><p>Ethereum + Solidity + MetaMask.</p></div>
+</div>
+</section>
+
+<section id="skills">
+<h2 class="section-title">Complete Technical Skills</h2>
+<div class="skills-grid">
+<div class="skill">Python</div><div class="skill">Java</div><div class="skill">C++</div>
+<div class="skill">SQL</div><div class="skill">PostgreSQL</div><div class="skill">MongoDB</div>
+<div class="skill">Machine Learning</div><div class="skill">Deep Learning</div><div class="skill">AI</div>
+<div class="skill">NLP</div><div class="skill">Computer Vision</div><div class="skill">YOLO</div>
+<div class="skill">TensorFlow</div><div class="skill">Keras</div><div class="skill">PyTorch</div>
+<div class="skill">Scikit-Learn</div><div class="skill">NumPy</div><div class="skill">Pandas</div>
+<div class="skill">Apache Spark</div><div class="skill">Hadoop</div><div class="skill">Big Data</div>
+<div class="skill">Flask</div><div class="skill">Django</div><div class="skill">FastAPI</div>
+<div class="skill">MERN Stack</div><div class="skill">Node.js</div><div class="skill">React</div>
+<div class="skill">Docker</div><div class="skill">Kubernetes</div><div class="skill">Jenkins</div>
+<div class="skill">AWS</div><div class="skill">Amazon Lambda</div><div class="skill">ECS</div>
+<div class="skill">Google Cloud</div><div class="skill">Microsoft Azure</div>
+<div class="skill">Power BI</div><div class="skill">Data Visualization</div>
+<div class="skill">Pipeline Automation</div><div class="skill">Data Engineering</div>
+<div class="skill">Blockchain</div><div class="skill">Solidity</div>
+<div class="skill">Agile</div><div class="skill">Jira</div>
+<div class="skill">SEO</div><div class="skill">WordPress</div>
+<div class="skill">Digital Marketing</div><div class="skill">Content Writing</div>
+</div>
+</section>
+
+<section id="certifications">
+<h2 class="section-title">Certifications & Volunteer Work</h2>
+<div class="skills-grid">
+<div class="skill">Applied Data Science Python Specialization</div>
+<div class="skill">Deep Learning Specialization</div>
+<div class="skill">Managerial Business Analysis Specialization</div>
+<div class="skill">Big Data Fundamentals</div>
+<div class="skill">Google Cloud Specialization</div>
+<div class="skill">AWS Cloud Native</div>
+<div class="skill">Blockchain Specialization</div>
+<div class="skill">Workshops on Java, Python, C++, Data Science</div>
+<div class="skill">Member of Google Developer Group</div>
+<div class="skill">Member of CST & Entrepreneur Club</div>
+<div class="skill">Google Developer 10 Badges</div>
+<div class="skill">IBM Data Science Badges</div>
+<div class="skill">Hackathon Participation - ACIC VGU</div>
+<div class="skill">IBM Blockchain Badges</div>
+<div class="skill">English Language: B2, C1 Level</div>
+</div>
+</section>
+
+<section id="contact">
+<h2 class="section-title">Contact</h2>
+<div class="card">
+<p>Email: abhaycoprate@yahoo.com</p>
+<p>Phone: +91 9649630683</p>
+<p><a href="https://github.com/abhay382" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/abhay-s-827963313/" target="_blank">LinkedIn</a></p>
+</div>
+</section>
+
+<footer>
+© 2026 Abhay Singh | Deep Space AI Portfolio
+</footer>
+
+<script>
+// ===== ULTRA REALISTIC DEEP SPACE EXPERIENCE =====
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,10000);
+const renderer=new THREE.WebGLRenderer({alpha:true,antialias:true});
+renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setSize(window.innerWidth,window.innerHeight);
+renderer.domElement.style.position='fixed';
+renderer.domElement.style.top='0';
+renderer.domElement.style.left='0';
+renderer.domElement.style.width='100%';
+renderer.domElement.style.height='100%';
+renderer.domElement.style.zIndex='-10';
+document.body.appendChild(renderer.domElement);
+
+window.addEventListener('resize',()=>{
+  camera.aspect=window.innerWidth/window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth,window.innerHeight);
+});
+
+// ===== STARS =====
+const starGeo=new THREE.BufferGeometry();
+const starMat=new THREE.PointsMaterial({color:0xffffff,size:1});
+const starVerts=[];
+for(let i=0;i<7000;i++){
+  starVerts.push((Math.random()-0.5)*8000);
+  starVerts.push((Math.random()-0.5)*8000);
+  starVerts.push((Math.random()-0.5)*8000);
+}
+starGeo.setAttribute('position',new THREE.Float32BufferAttribute(starVerts,3));
+const stars=new THREE.Points(starGeo,starMat);
+scene.add(stars);
+
+// ===== NEBULA CLOUDS =====
+const nebulaTexture=new THREE.TextureLoader().load('https://threejs.org/examples/textures/sprites/cloud.png');
+const nebulaMaterial=new THREE.SpriteMaterial({map:nebulaTexture,color:0x6622ff,transparent:true,opacity:0.4});
+for(let i=0;i<20;i++){
+  const sprite=new THREE.Sprite(nebulaMaterial);
+  sprite.scale.set(800,800,1);
+  sprite.position.set((Math.random()-0.5)*4000,(Math.random()-0.5)*2000,(Math.random()-0.5)*4000);
+  scene.add(sprite);
+}
+
+// ===== LIGHT =====
+const ambientLight=new THREE.AmbientLight(0x404040,1.5);
+scene.add(ambientLight);
+const light=new THREE.PointLight(0xffffff,2,5000);
+scene.add(light);
+
+// ===== REALISTIC GLOWING SUN (Shader) =====
+const sunGeo=new THREE.SphereGeometry(80,64,64);
+const sunMat=new THREE.ShaderMaterial({
+  uniforms:{time:{value:0}},
+  vertexShader:`varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }`,
+  fragmentShader:`uniform float time; varying vec2 vUv;
+  void main(){ float glow=0.5+0.5*sin(time+vUv.y*10.0);
+  gl_FragColor=vec4(1.0,0.5+glow*0.3,0.0,1.0); }`
+});
+const sun=new THREE.Mesh(sunGeo,sunMat);
+scene.add(sun);
+light.position.copy(sun.position);
+
+// ===== PLANETS =====
+const planets=[];
+const planetInfo=[
+  {size:10,distance:150,color:0xaaaaaa,speed:0.02},
+  {size:14,distance:220,color:0xffcc99,speed:0.015},
+  {size:16,distance:300,color:0x3399ff,speed:0.01,earth:true},
+  {size:12,distance:380,color:0xff3300,speed:0.008},
+  {size:35,distance:500,color:0xff9933,speed:0.006},
+  {size:30,distance:650,color:0xffcc66,speed:0.005},
+  {size:22,distance:800,color:0x66ccff,speed:0.004},
+  {size:22,distance:950,color:0x3366ff,speed:0.003}
+];
+
+let moon;
+
+planetInfo.forEach(data=>{
+  const geo=new THREE.SphereGeometry(data.size,32,32);
+  const mat=new THREE.MeshStandardMaterial({color:data.color});
+  const mesh=new THREE.Mesh(geo,mat);
+  scene.add(mesh);
+  planets.push({mesh:mesh,distance:data.distance,speed:data.speed,angle:Math.random()*Math.PI*2,earth:data.earth});
+
+  // Moon for Earth
+  if(data.earth){
+    const moonGeo=new THREE.SphereGeometry(4,32,32);
+    const moonMat=new THREE.MeshStandardMaterial({color:0xcccccc});
+    moon=new THREE.Mesh(moonGeo,moonMat);
+    scene.add(moon);
+  }
+});
+
+camera.position.z=1200;
+
+// ===== ORBIT CONTROLS (Mouse Control) =====
+const controls=new THREE.OrbitControls(camera,renderer.domElement);
+controls.enableDamping=true;
+controls.dampingFactor=0.05;
+controls.enableZoom=true;
+
+// ===== PARALLAX SCROLL DEPTH =====
+window.addEventListener('scroll',()=>{
+  const scrollY=window.scrollY;
+  camera.position.z=1200 - scrollY*0.5;
+});
+
+// ===== FLOATING 3D PROJECT CARDS =====
+const projectTitles=["FORTIK","Fraud Detection","AI Chatbot","E-Commerce","IPL Prediction","Spam Detection"];
+const cardObjects=[];
+
+projectTitles.forEach((title,index)=>{
+  const canvas=document.createElement('canvas');
+  canvas.width=512; canvas.height=256;
+  const ctx=canvas.getContext('2d');
+  ctx.fillStyle="#0f172a";
+  ctx.fillRect(0,0,512,256);
+  ctx.strokeStyle="#00ffff";
+  ctx.strokeRect(10,10,492,236);
+  ctx.fillStyle="#00ffff";
+  ctx.font="bold 40px Orbitron";
+  ctx.fillText(title,50,140);
+
+  const texture=new THREE.CanvasTexture(canvas);
+  const material=new THREE.MeshBasicMaterial({map:texture,transparent:true});
+  const geometry=new THREE.PlaneGeometry(250,125);
+  const mesh=new THREE.Mesh(geometry,material);
+
+  mesh.position.set((Math.random()-0.5)*2000,(Math.random()-0.5)*800,(Math.random()-0.5)*2000);
+  scene.add(mesh);
+  cardObjects.push(mesh);
+});
+
+// ===== COSMIC AMBIENT SOUND =====
+const listener=new THREE.AudioListener();
+camera.add(listener);
+const sound=new THREE.Audio(listener);
+const audioLoader=new THREE.AudioLoader();
+audioLoader.load('https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=space-ambient-110624.mp3',function(buffer){
+  sound.setBuffer(buffer);
+  sound.setLoop(true);
+  sound.setVolume(0.3);
+  sound.play();
+});
+
+function animate(){
+  requestAnimationFrame(animate);
+
+  stars.rotation.y+=0.0008;
+  sun.rotation.y+=0.002;
+  sunMat.uniforms.time.value+=0.05;
+
+  planets.forEach(p=>{
+    p.angle+=p.speed;
+    p.mesh.position.x=Math.cos(p.angle)*p.distance;
+    p.mesh.position.z=Math.sin(p.angle)*p.distance;
+    p.mesh.rotation.y+=0.01;
+
+    // Moon orbit Earth
+    if(p.earth && moon){
+      moon.position.x=p.mesh.position.x + Math.cos(p.angle*4)*30;
+      moon.position.z=p.mesh.position.z + Math.sin(p.angle*4)*30;
+    }
+  });
+
+  controls.update();
+
+  // Floating animation for project cards
+  cardObjects.forEach((card,i)=>{
+    card.rotation.y+=0.005;
+    card.position.y+=Math.sin(Date.now()*0.001+i)*0.3;
+  });
+
+  renderer.render(scene,camera);
+}
+animate();
+
+// Typing Animation
+const roles=["AI Security Engineer","Deepfake Detection Architect","Data Scientist","Blockchain Developer"];
+let i=0,j=0,current="",isDeleting=false;
+function type(){
+if(i<roles.length){
+if(!isDeleting&&j<=roles[i].length){current=roles[i].substring(0,j++);} 
+else if(isDeleting&&j>=0){current=roles[i].substring(0,j--);} 
+if(j==roles[i].length)isDeleting=true;
+if(j==0&&isDeleting){isDeleting=false;i++;}
+document.getElementById("typing").innerText=current;
+}else{i=0;}
+setTimeout(type,100);
+}
+type();
+</script>
+
+</body>
+</html>
